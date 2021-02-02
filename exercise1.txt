@@ -1,0 +1,165 @@
+Login scenarios
+
+ID:1
+Title: Login successfully
+Objective: Pass the login with the right data
+Type:Positive
+Presteps:
+	-   Go to Login Page
+Steps:
+	-	Complete the field Username with <username>
+	-	Complete the field Password with <password>
+	-	Click Login button
+
+Expected result: 
+	-	The homepage is displayed correctly
+
+TestData: 
+	-username: “standard_user” 
+	-password: “secret_sauce”
+__________________________________________________________________________________________________
+
+ID:2
+Title: Invalid Login - Empty Username
+Objective: see the error from empty username
+Presteps:
+	-   Go to Login Page
+Steps:
+	-	Complete the field Username with <username>
+	-	Complete the field Password with <password>
+	-	Click Login button
+	
+Expected result: 
+	-	Error message <message> of empty username is displayed
+
+TestData: 
+	-username: “” 
+	-password: “secret_sauce”
+	-message: “Epic sadface: Username is required”
+
+__________________________________________________________________________________________________
+
+ID:3
+Title: Invalid Login - Empty Password
+Objective: see the error from empty password
+Presteps:
+	-   Go to Login Page
+Steps:
+	-	Complete the field Username with <username>
+	-	Complete the field Password with <password>
+	-	Click Login button
+	
+Expected result: 
+	-	Error message <message> of empty password is displayed
+	
+TestData: 
+	-username: “” 
+	-password: “secret_sauce”
+	-message: “Epic sadface: Password is required”
+
+__________________________________________________________________________________________________	
+ID:4
+Title: Invalid Login - Empty Username and Password
+Objective: see the error from empty username and password
+Presteps:
+	-   Go to Login Page
+Steps:
+	-	Complete the field Username with <username>
+	-	Complete the field Password with <password>
+	-	Click Login button
+	
+Expected result: 
+	- 	Error message <message> of empty username and password is displayed
+	
+TestData: 
+	-username: “” 
+	-password: “”
+	-message: “Epic sadface: Username is required”
+__________________________________________________________________________________________________	
+
+ID:5
+Title: Invalid Login - Wrong Username
+Objective: see the error from invalid username
+Presteps:
+	-   Go to Login Page
+Steps:
+	-	Complete the field Username with <username>
+	-	Complete the field Password with <password>
+	-	Click Login button
+	
+Expected result: 
+	-	Error message <message> of invalid password is displayed
+
+TestData: 
+	-username: “sdasfsafqwd” 
+	-password: “secret_sauce”
+	-message: “Epic sadface: Username and password do not match any user in this service”
+__________________________________________________________________________________________________	
+
+ID:6
+Title: Invalid Login - Wrong Password
+Objective: see the error from invalid password
+Presteps:
+	-   Go to Login Page
+Steps:
+	-	Complete the field Username with <username>
+	-	Complete the field Password with <password>
+	-	Click Login button
+	
+Expected result: 
+	- 	Error message <message> of invalid password is displayed
+
+TestData: 
+	-username: “standard_user” 
+	-password: “sdasasasasd”
+	-message: “Epic sadface: Username and password do not match any user in this service”
+__________________________________________________________________________________________________	
+
+ID:7
+Title: Invalid Login - Locked User
+Objective: see the error from locked username
+Presteps:
+	-   Go to Login Page
+Steps:
+	-	Complete the field Username with <username>
+	-	Complete the field Password with <password>
+	-	Click Login button
+	
+Expected result: 
+	-	Error message <message> of locked username is displayed
+	
+TestData: 
+	-username: “locked_out_user” 
+	-password: “secret_sauce”
+	-message: “Epic sadface: Sorry, this user has been locked out.”
+__________________________________________________________________________________________________	
+
+ID:8
+Title: Login - UI
+Objective: All components displayed
+Presteps:
+	-   Go to Login Page
+
+Expected results:
+	-	Username field is displayed
+	-	Password field is displayed
+	-	Login button is displayed
+	
+__________________________________________________________________________________________________	
+
+ID:9
+Title: Login - UI Message displayed
+Objective: Error message displayed
+Presteps:
+	-   Go to Login Page
+Steps:
+	-	Complete the field Username with <username>
+	-	Complete the field Password with <password>
+	-	Click Login button
+	
+Expected result: 
+	-   Error message is displayed
+	
+TestData: 
+	-username: “locked_out_user” 
+	-password: “secret_sauce”
